@@ -31,7 +31,7 @@ btnSearch.addEventListener('click', e => {
     btnLoadMore.style.display = 'block';
     gallerySimpleLightbox.refresh();
 
-    if (foundData.hits.length < 12) {
+    if (foundData.hits.length < 40) {
       btnLoadMore.style.display = 'none';
     }
   });
