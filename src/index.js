@@ -18,6 +18,7 @@ btnSearch.addEventListener('click', e => {
   e.preventDefault();
   cleanGallery();
   const trimmedValue = input.value.trim();
+
   if (!trimmedValue) return;
   fetchImages(trimmedValue, pageNumber).then(foundData => {
     if (foundData.hits.length === 0) {
@@ -42,15 +43,14 @@ btnLoadMore.addEventListener('click', () => {
   const trimmedValue = input.value.trim();
   btnLoadMore.style.display = 'none';
   fetchImages(trimmedValue, pageNumber).then(foundData => {
-    if (foundData.hits.length === 0) {
-      Notiflix.Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
-      );
-    } else {
-      renderImageList(foundData.hits);
-      // Notiflix.Notify.success(
-      //   `Hooray! We found ${foundData.totalHits} images.`
-      // );
+    //     if (foundData.hits.length === 0) {
+    //       btnLoadMore.style.display = 'none';
+    //       Notiflix.Notify.failure(
+    //         'Sorry, there are no images matching your search query. Please try again.'
+    //       );
+    //     }
+    renderImageList(foundData.hits);
+    if (foundData.hits.length === 40) {
       btnLoadMore.style.display = 'block';
     }
   });
