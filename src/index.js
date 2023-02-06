@@ -48,9 +48,9 @@ btnLoadMore.addEventListener('click', () => {
       );
     } else {
       renderImageList(foundData.hits);
-      Notiflix.Notify.success(
-        `Hooray! We found ${foundData.totalHits} images.`
-      );
+      // Notiflix.Notify.success(
+      //   `Hooray! We found ${foundData.totalHits} images.`
+      // );
       btnLoadMore.style.display = 'block';
     }
   });
